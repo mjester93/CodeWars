@@ -1,0 +1,8 @@
+def DNA_strand(dna):
+  switch = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+  final_array = []
+  for char in dna:
+    final_array.append(switch[char])
+        
+  return "".join(final_array)
+  
