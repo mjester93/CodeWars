@@ -1,0 +1,16 @@
+def tribonacci(signature, n):
+  i = 3
+  final_array = signature
+    
+  if n == 0:
+      return []
+    
+  if n < 3:
+      return signature[0:n]
+    
+  while i < n:
+      final_array.append(sum(final_array[-3:]))
+      i = i + 1
+        
+  return final_array
+    
