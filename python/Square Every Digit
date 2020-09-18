@@ -1,0 +1,7 @@
+def square_digits(num):
+  array = []
+    
+  for n in str(num):
+    array.append(str(int(n) ** 2))
+        
+  return int("".join(array))
