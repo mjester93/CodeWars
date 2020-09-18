@@ -1,0 +1,9 @@
+def data_reverse(data):
+  reversed_list = [data[i:i+8] for i in range(0, len(data), 8)][::-1]
+    
+  flattened_list = []
+  for list in reversed_list:
+    for element in list:
+      flattened_list.append(element)
+            
+  return flattened_list
