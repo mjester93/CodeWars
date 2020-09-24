@@ -1,0 +1,13 @@
+function squareSum(numbers){
+  // Get the squares of all the numbers
+  let squared_numbers = numbers.map(i => {return i**2})
+  
+  // Summing all the numbers
+  let sum_of_squared_numbers = 0;
+  squared_numbers.forEach(i => {
+    sum_of_squared_numbers += i
+  })
+  
+  // Returning final
+  return sum_of_squared_numbers
+}
