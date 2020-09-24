@@ -1,0 +1,40 @@
+function tickets(peopleInLine){
+  let answer;
+  let bills = {25: 0, 50: 0, 100: 0}
+
+  for (let i=0; i<peopleInLine.length; i++) {
+    let ticket = peopleInLine[i];
+    
+    if (i === 0) {
+      if (ticket != 25) {
+        return 'NO';
+      } else {
+        answer = 'YES';
+        bills[25] += 1
+      }
+
+    } else {
+      if (ticket === 25) {
+        answer = 'YES';
+        bills[25] += 1;
+      } else if (ticket === 50 && bills[25] >= 1) {
+        answer = 'YES';
+        bills[50] += 1;
+        bills[25] -= 1;
+      } else if (ticket === 100 && bills[50] >= 1 && bills[25] >= 1) {
+        answer = 'YES';
+        bills[100] += 1;
+        bills[50] -= 1;
+        bills[25] -= 1;
+      } else if (ticket === 100 && bills[25] >= 3) {
+        answer = 'YES';
+        bills[100] += 1;
+        bills[25] -= 3;
+      } else {
+        return 'NO'
+      }
+    }
+  }
+
+  return answer
+}
