@@ -1,0 +1,6 @@
+function digitize(n) {
+  let reversed_strings = n.toString().split('').reverse();
+  
+  // converting strings back to integers
+  return reversed_strings.map(i => {return parseInt(i)})
+}
